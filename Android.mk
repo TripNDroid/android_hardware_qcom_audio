@@ -18,6 +18,7 @@ include $(MY_LOCAL_PATH)/policy_hal/Android.mk
 include $(MY_LOCAL_PATH)/visualizer/Android.mk
 include $(MY_LOCAL_PATH)/post_proc/Android.mk
 include $(MY_LOCAL_PATH)/qahw_api/Android.mk
+include $(MY_LOCAL_PATH)/libhwdaphal/Android.mk
 endif
 
 ifeq ($(USE_LEGACY_AUDIO_DAEMON), true)
