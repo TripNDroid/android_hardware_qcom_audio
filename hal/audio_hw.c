@@ -1720,7 +1720,7 @@ int select_devices(struct audio_device *adev, audio_usecase_t uc_id)
     audio_extn_utils_update_stream_app_type_cfg_for_usecase(adev,
                                                             usecase);
     if (usecase->type == PCM_PLAYBACK) {
-        if ((24 == usecase->stream.out->bit_width) &&
+        if ((24 || 32 == usecase->stream.out->bit_width) &&
                 (usecase->stream.out->devices & AUDIO_DEVICE_OUT_SPEAKER)) {
             usecase->stream.out->app_type_cfg.sample_rate = DEFAULT_OUTPUT_SAMPLING_RATE;
         } else if ((out_snd_device == SND_DEVICE_OUT_HDMI ||
@@ -1742,7 +1742,7 @@ int select_devices(struct audio_device *adev, audio_usecase_t uc_id)
             usecase->stream.out->app_type_cfg.sample_rate = DEFAULT_OUTPUT_SAMPLING_RATE;
         }
 
-        if ((24 == usecase->stream.out->bit_width) &&
+        if ((24 || 32 == usecase->stream.out->bit_width) &&
                 (usecase->stream.out->devices & AUDIO_DEVICE_OUT_SPEAKER)) {
             usecase->stream.out->app_type_cfg.sample_rate = DEFAULT_OUTPUT_SAMPLING_RATE;
         } else if ((out_snd_device == SND_DEVICE_OUT_HDMI ||
