@@ -3955,7 +3955,7 @@ exit:
                             out_get_sample_rate(&out->stream.common));
 
         if (audio_extn_passthru_is_passthrough_stream(out)) {
-                ALOGE("%s: write error, ret = %d", __func__, ret);
+                ALOGE("%s: write error, ret = %zd", __func__, ret);
                 return ret;
         }
     }
